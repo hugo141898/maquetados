@@ -1,24 +1,49 @@
-const resultadosElement = document.getElementById('resultados');
+let movieNameRef = document.getElementById("movie-name");
+let searchBtn = document.getElementById("search-btn");
+let result = document.getElementById("result");
 
-// Petición Fetch a la API de Mercado Libre
-fetch('https://api.mercadolibre.com/sites/MLA/search?q=ordenadores')
-  .then(response => response.json())
-  .then(data => {
-    // Recorrer los resultados y mostrarlos en una lista
-    data.results.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item.title;
-      resultadosElement.appendChild(li);
-    });
-  })
-  .catch(error => console.error(error));
+let getMovie = () => {
+    let movieName = movieNameRef.value;
+    let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
+    if (movieName.length <= 0) {
+        result.innerHTML = `<h3 class="msg">Por favor ingresa el nombre de una película</h3>`;
+    } else {
+        fetch(url)
+        .then((resp) => resp.json())
+        .then((data) => {
+            if (data.Response == "True") {
+                result.innerHTML = `
+                <div class="info">
+                    <img src=${data.Poster} class="poster">
+                    <div>
+                        <h2>${data.Title}</h2>
+                        <div class="rating">
+                            <img src="star-icon.svg">
+                            <h4>${data.imdbRating}<h4>
+                        </div>
+                        <div class="details">
+                            <span>${data.Rated}</span>
+                            <span>${data.Year}</span>
+                            <span>${data.Runtime}</span>
+                        </div>
+                        <div class="genre">
+                            <div>${data.Genre.split(",").join("</div><div>")}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Argumento:</h3>
+                <p>${data.Plot}</p>
+                <h3>Reparto:</h3>
+                <p>${data.Actors}</p>`;
+            } else {
+                result.innerHTML = `<h3 class="msg">${data.Error}</h3>`;
+            }
+        })
+        .catch(() => {
+            result.innerHTML = `<h3 class="msg">Ocurrió un error</h3>`;
+        });
+    }
+};
 
-// Petición Fetch a la API de PokéAPI
-fetch('https://pokeapi.co/api/v2/pokemon/ditto')
-  .then(response => response.json())
-  .then(data => {
-    const li = document.createElement('li');
-    li.textContent = `Nombre: ${data.name}, Tipo: ${data.types[0].type.name}`;
-    resultadosElement.appendChild(li);
-  })
-  .catch(error => console.error(error));
+searchBtn.addEventListener("click", getMovie);
+window.addEventListener("load", getMovie);
