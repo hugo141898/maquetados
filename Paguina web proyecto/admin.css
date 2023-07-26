@@ -1,0 +1,101 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    min-height: 600px;
+    background-color: rgb(255, 216, 145);
+}
+
+.formulario{
+    margin-top: 100px;
+    display: grid;
+    background-color: orange;
+    padding: 30px;
+    border-radius: 1rem;
+    border: 4px solid rgb(119, 77, 0);
+}
+
+.formulario:hover{
+    box-shadow: 10px 10px white;
+}
+input{
+    border: 0;
+    background-color: rgb(255, 205, 112);
+    margin: 10px;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#addButton{
+    width: 50%;
+    background-color: rgba(240, 248, 255, 0);
+    border: 2px solid rgb(104, 67, 0);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-left: 23%;
+}
+#addButton:hover{
+    background-color: rgb(187, 122, 3);
+    transition: .5s ease-in-out;
+}
+
+#updateButton{
+    width: 50%;
+    background-color: rgba(240, 248, 255, 0);
+    border: 2px solid rgb(104, 67, 0);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 23%;
+}
+#updateButton:hover{
+    background-color: rgb(109, 71, 0);
+    transition: .5s ease-in-out;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+button{
+    width: 50%;
+    background-color: rgba(240, 248, 255, 0);
+    border: 2px solid rgb(104, 67, 0);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 3px;
+    margin-left: 23%;
+}
+button:hover{
+    background-color: rgb(109, 71, 0);
+    transition: .5s ease-in-out;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+#lista{
+    list-style: none;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: white;
+    margin: 30px;
+}

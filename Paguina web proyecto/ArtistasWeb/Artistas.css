@@ -1,0 +1,203 @@
+/*header*/
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background-color: rgb(255, 215, 250);
+    margin-top: 130px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+background-color: rgb(34, 34, 34);
+    height: 100px;
+    width: 100%;
+    border-bottom: 30px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(0, 0, 0);
+    transform: translateY(-0.25em);
+}
+
+.apartados ul li a button{
+    margin: 100px;
+    margin-top: 180px;
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: .5rem;
+    transition: background-color 2s ease;   
+}
+
+
+.apartados ul li a button:hover,
+.apartados ul li a button:focus{
+    box-shadow: 0 0.5em 0.5em -0.3em rgb(0, 0, 0);
+  transform: translateY(-0.25em);
+
+  background-color: rgb(4, 121, 255);
+  color: white;
+}
+
+.red-social ul li a img{
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: 10px;
+}
+.red-social ul{
+    max-height: 100px;
+    max-width: 100px;
+}
+.red-social ul li a{
+    font-size: 20px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+    margin-left: 3px;
+}
+.red-social ul li{
+    margin-top: 30px;
+}
+
+.red-social {
+    position: fixed; 
+    top: 400px; 
+    right: 30px; 
+    background-color: rgb(255, 255, 255);
+    height: 320px;
+    width: 70px;
+    border-radius: 1rem;
+    padding: 15px;
+    transition: background-color 0.5s ease;
+    color: black;
+    box-shadow: 9px 5px 5px;
+}
+
+.red-social:hover{
+    background-color: rgba(0, 0, 0, 0.432);
+    box-shadow: 9px 5px 5px rgb(0, 0, 0);
+    color: white;
+}
+.red-social img:hover{
+    max-height: 70px;
+    max-width: 70px;
+    margin-left: 1px;
+}
+.red-social a{
+    color: white;
+}
+
+.red-social .color-background{
+    display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.header .apartados ul{
+    display: flex;
+}
+ul{
+
+    list-style: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/*main*/
+main{
+    height: 500px;
+}
+
+
+/*main*/
+
+@keyframes animar-letras{
+    0%{
+        transform: rotate(3deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+#artistas-dato{
+    animation: animar-letras 4s infinite;
+    list-style:circle;
+    color: orange;
+    font-size: 40px;
+    text-align: center;
+    margin: auto;
+}
+
+
+/*diseño de pie*/
+.pie{
+    background-image: linear-gradient(rgb(207, 86, 191), rgb(255, 123, 237));
+    border-top: 3px solid rgb(255, 215, 250);
+}
+.pie:hover{
+    background-color: rgb(0, 0, 0);
+}
+.pie .contenido-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.pie .contenido-footer .container{
+    margin: 20px;
+    margin-left: 90px;
+    margin-right: 90px;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+}
+.pie .contenido-footer .container h1{
+    color: rgb(255, 205, 111);
+    font-size: 30px;
+    margin-bottom: 15px;
+
+}
+.pie .contenido-footer .container p{
+    margin-bottom: 8px;
+}
+.pie2{
+    background-color: #000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+}
+
+.pie2 p{
+    font-size: 15px;
+    display: flex;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}
